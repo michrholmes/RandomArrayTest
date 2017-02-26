@@ -1,0 +1,35 @@
+//***************************************************************************************
+// RandomArrayTest.java            Author: Michelle Holmes   
+//
+// A tester program to demonstrate the creation of an object containing an array. Tests
+// the methods of the RandomArray object.
+//***************************************************************************************
+public class RandomArrayTest 
+{
+	//---------------------------------------------------------------------------------------
+	// Creates a RandomArray object that contains and integer array of random integers.
+	// Program demonstrates the RandomArray methods to display the minimum, maximum and 
+	// average of the array values in RandomArray objects array.
+	//---------------------------------------------------------------------------------------
+
+	public static void main(String[] args) 
+	{
+		final int SIZE = 25;   // Declares constant integer variable SIZE.
+		
+		RandomArray randA = new RandomArray(SIZE); // Instantiates new RandomArray Object with
+											// the constant SIZE passed as the actual parameter
+		
+		System.out.println(randA + "\n"); 
+				// toString() method prints the String representation of array values in object randA.
+		
+		System.out.println("The Maximum of the Array is: " + randA.findMax() + "\n");
+				// findMax() method prints the maximum value in randA object array.
+		
+		System.out.println("The Minimum of the Array is: " + randA.findMin() + "\n");
+				// findMin() method prints the minimum  value in randA object array.
+		
+		System.out.println("The Average of the Array is: " + randA.findAverage());
+				// findAverage() method prints the average of values in randA object array.
+	}
+
+}
