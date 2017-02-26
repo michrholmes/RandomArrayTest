@@ -1,0 +1,81 @@
+//***************************************************************************************
+// RandomArray.java            Author: Michelle Holmes   
+//
+// RandomArray class creates an array filled with random integer values. 
+//***************************************************************************************
+import java.util.Random;
+
+public class RandomArray 
+{
+
+private int min, max, sum, average;  // Declares private integer variables.
+private int [] arr;				// Declares private integer array "arr" 
+								
+
+//-------------------------------------------------------------------------------------
+// Constructs a new integer array with the length of the parameter "size" and initializes
+// each value in the array to a random integer within the range 0 to size of the array.
+//-------------------------------------------------------------------------------------
+public RandomArray(int size)  
+{
+	arr = new int [size];     // constructor instantiates and sets up size of array using the
+								// integer formal parameter "size".
+	Random generator = new Random();  // instantiates a new random number generator.
+	
+	for (int index = 0; index < arr.length; index++)  // constructor assigns a random integer
+		arr[index] = generator.nextInt(arr.length + 1);   // to each value in the array.
+}
+//-------------------------------------------------------------------------------------
+// Finds and returns the maximum value of a random array.
+//-------------------------------------------------------------------------------------
+public int findMax()
+{
+	max = arr[0];	// Sets up initial "max" integer variable, initially set for value in index 0.
+	for (int index = 0; index < arr.length; index++)	// for loop to evaluate each array value.
+		if (arr[index] > max)					// Boolean expression to check if value at
+			max = arr[index];					// current index is greater than the index value
+										// currently saved in max. If it is the value is replaced
+	return max;							//  with the new index value. 
+}
+//-------------------------------------------------------------------------------------
+// Finds and returns the minimum value of the random array.
+//-------------------------------------------------------------------------------------
+public int findMin()
+{
+	min = arr[0];	// Sets up initial "min" integer variable, initially set for value in index 0.
+	for (int index = 0; index < arr.length; index++)	// for loop to evaluate each array value.
+		if (arr[index] < min)  // Boolean  expression to check if values at current index is 
+		min = arr[index];		// less than the index value currently saved in min. If it is 
+								// the value is replaces with the new index value.
+		return min;
+}
+
+//------------------------------------------------------------------------------------
+// Finds and returns the average of the random array.
+//------------------------------------------------------------------------------------
+public int findAverage()
+{
+	sum = 0;      // Sets up initial "sum" integer variable set to 0.
+	for (int index = 0; index < arr.length; index++) // for loop to evaluate each array value.
+		sum += arr[index];    // Adds the current index value to the current value in sum. 
+	
+		average = sum / arr.length; // Calculates average by dividing total sum by array size.
+		
+		return average;
+}
+
+//------------------------------------------------------------------------------------
+// Returns the string representation of the array values.
+//------------------------------------------------------------------------------------
+public String toString()
+{
+	
+		String nums = "The Array is: \n";   // Instantiates String literal object "nums".
+	for (int index = 0; index < arr.length; index++) // for loop to evaluate each array value
+		 nums += arr[index] + "\t"; // String concatenation with each array value added to the
+									// String object.
+	return nums;
+	
+}
+
+}
