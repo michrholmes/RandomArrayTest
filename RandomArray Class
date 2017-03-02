@@ -8,8 +8,9 @@ import java.util.Random;
 public class RandomArray 
 {
 
-private int min, max, sum, average;  // Declares private integer variables.
-private int [] arr;				// Declares private integer array "arr" 
+private int min, max; 
+private int [] arr;	
+private double average;
 								
 
 //-------------------------------------------------------------------------------------
@@ -18,12 +19,12 @@ private int [] arr;				// Declares private integer array "arr"
 //-------------------------------------------------------------------------------------
 public RandomArray(int size)  
 {
-	arr = new int [size];     // constructor instantiates and sets up size of array using the
-								// integer formal parameter "size".
+	arr = new int [size];     
+								
 	Random generator = new Random();  // instantiates a new random number generator.
 	
-	for (int index = 0; index < arr.length; index++)  // constructor assigns a random integer
-		arr[index] = generator.nextInt(arr.length + 1);   // to each value in the array.
+	for (int index = 0; index < arr.length; index++)  // constructor assigns a random integer to each value in array.
+		arr[index] = generator.nextInt(arr.length + 1);   
 }
 //-------------------------------------------------------------------------------------
 // Finds and returns the maximum value of a random array.
@@ -31,35 +32,35 @@ public RandomArray(int size)
 public int findMax()
 {
 	max = arr[0];	// Sets up initial "max" integer variable, initially set for value in index 0.
-	for (int index = 0; index < arr.length; index++)	// for loop to evaluate each array value.
-		if (arr[index] > max)					// Boolean expression to check if value at
-			max = arr[index];					// current index is greater than the index value
-										// currently saved in max. If it is the value is replaced
-	return max;							//  with the new index value. 
+	for (int index = 0; index < arr.length; index++)	
+		if (arr[index] > max)					
+			max = arr[index];					 
+										
+	return max;							 
 }
 //-------------------------------------------------------------------------------------
 // Finds and returns the minimum value of the random array.
 //-------------------------------------------------------------------------------------
 public int findMin()
 {
-	min = arr[0];	// Sets up initial "min" integer variable, initially set for value in index 0.
-	for (int index = 0; index < arr.length; index++)	// for loop to evaluate each array value.
-		if (arr[index] < min)  // Boolean  expression to check if values at current index is 
-		min = arr[index];		// less than the index value currently saved in min. If it is 
-								// the value is replaces with the new index value.
+	min = arr[0];	
+	for (int index = 0; index < arr.length; index++)	
+		if (arr[index] < min)  
+		min = arr[index];		 
+								
 		return min;
 }
 
 //------------------------------------------------------------------------------------
 // Finds and returns the average of the random array.
 //------------------------------------------------------------------------------------
-public int findAverage()
+public double findAverage()
 {
-	sum = 0;      // Sets up initial "sum" integer variable set to 0.
-	for (int index = 0; index < arr.length; index++) // for loop to evaluate each array value.
-		sum += arr[index];    // Adds the current index value to the current value in sum. 
+	double sum = 0.0;      
+	for (int index = 0; index < arr.length; index++) 
+		sum += arr[index];     
 	
-		average = sum / arr.length; // Calculates average by dividing total sum by array size.
+		average = sum / arr.length; 
 		
 		return average;
 }
@@ -70,10 +71,10 @@ public int findAverage()
 public String toString()
 {
 	
-		String nums = "The Array is: \n";   // Instantiates String literal object "nums".
-	for (int index = 0; index < arr.length; index++) // for loop to evaluate each array value
-		 nums += arr[index] + "\t"; // String concatenation with each array value added to the
-									// String object.
+		String nums = "The Array is: \n";   
+	for (int index = 0; index < arr.length; index++) 
+		 nums += arr[index] + "\t"; 
+									
 	return nums;
 	
 }
